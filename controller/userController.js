@@ -1,3 +1,7 @@
 exports.home = (req, res) => {
-    res.send("<h1>In controller</h2>")
+    res.render('signin')
+}
+
+exports.signup = (req, res) => {
+    res.render('signup')
 }

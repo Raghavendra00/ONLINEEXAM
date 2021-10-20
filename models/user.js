@@ -23,8 +23,6 @@ const userSchema = mongoose.Schema({
     },
     score: {
         type: Number,
-        required: true,
-        trim: true
     },
     
 })

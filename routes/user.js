@@ -6,6 +6,9 @@ const userController=require("../controller/userController")
 router.get('/', userController.home)
 
 
+router.get('/signup', userController.signup)
+
+
 
 
 
