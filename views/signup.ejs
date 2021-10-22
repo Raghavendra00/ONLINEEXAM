@@ -28,19 +28,20 @@
 <body class="signup-page">
     <div class="signup-box">
         <div class="logo">
-            <a href="javascript:void(0);">Admin<b>BSB</b></a>
-            <small>Admin BootStrap Based - Material Design</small>
+            <a href="javascript:void(0);">Online<b>EXAM</b></a>
+            <!-- <small>Welcome to our website</small> -->
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_up" method="POST">
-                    <div class="msg">Register a new membership</div>
+                <form id="sign_up" action="/savedata" method="POST">
+                    <div class="msg">Register a new account</div>
+                   <center> <h3><%= msg%></h3></center>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="namesurname" placeholder="Name Surname" required autofocus>
+                            <input type="text" class="form-control" name="name" placeholder="Name Fullname" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -49,6 +50,14 @@
                         </span>
                         <div class="form-line">
                             <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">phone</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="number" class="form-control" name="phone" placeholder="Phone Number" required>
                         </div>
                     </div>
                     <div class="input-group">
@@ -75,7 +84,7 @@
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">SIGN UP</button>
 
                     <div class="m-t-25 m-b--5 align-center">
-                        <a href="/">You already have a membership?</a>
+                        <a href="/">Already have an account?</a>
                     </div>
                 </form>
             </div>

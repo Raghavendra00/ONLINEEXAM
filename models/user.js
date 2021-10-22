@@ -16,6 +16,13 @@ const userSchema = mongoose.Schema({
         required: true,
         trim: true
     },
+    confirm: {
+        type: String,
+        require: true,
+        trim:true
+    },
+
+
     phone: {
         type: Number,
         required: true,
@@ -27,4 +34,4 @@ const userSchema = mongoose.Schema({
     
 })
 
-module.exports = mongoose.model('User',userSchema)
+module.exports = mongoose.model('user',userSchema)

@@ -28,19 +28,23 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Admin<b>BSB</b></a>
-            <small>Admin BootStrap Based - Material Design</small>
+            <a href="javascript:void(0);">Online<b>EXAM</b></a>
+            <small>Enter your Login details</small>
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST">
+                <form id="sign_in" action="/postsignin" method="POST">
                     <div class="msg">Sign in to start your session</div>
+                    
+                    
+                        <h2><%= msg%></h2>
+                        
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                            <input type="text" class="form-control" name="email" placeholder="Email" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -65,7 +69,7 @@
                             <a href="/signup">Register Now!</a>
                         </div>
                         <div class="col-xs-6 align-right">
-                            <a href="forgot-password.html">Forgot Password?</a>
+                            <a href="/forgotpassword">Forgot Password?</a>
                         </div>
                     </div>
                 </form>
