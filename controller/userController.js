@@ -1,5 +1,5 @@
 const user = require('../models/user')
-const mongoose=require('../models/user')
+// const mongoose=require('../models/user')
 
 
 exports.home = (req, res) => {
@@ -7,11 +7,19 @@ exports.home = (req, res) => {
 }
 
 exports.dashboard = (req, res) => {
+    // console.log(req.session.user);
     res.render('dashboard')
 }
 
 exports.signup = (req, res) => {
     res.render('signup',{msg:''})
+}
+
+exports.logout = (req, res) => {
+    req.session.destroy(() => {
+
+        res.redirect('/')
+     })
 }
 exports.forgotpassword = (req, res) => {
     res.render('forgotpassword')
@@ -51,9 +59,17 @@ exports.postsignin = async (req, res) => {
 
     const result = await user.find({ email: req.body.email, password: req.body.password })
     if (result.length > 0) {
-        return res.redirect('/dashboard')
+        req.session.user = result[0]
+        req.session.save(() => {
+            return res.redirect('/dashboard')
+         })
     }
     else {
         res.render('signin',{msg:"Incorrect Details"})
     }
 }
+
+
+exports.exam = (req, res) => {
+  res.render("exam");
+};
