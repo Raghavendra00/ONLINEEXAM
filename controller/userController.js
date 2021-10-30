@@ -1,7 +1,5 @@
 const user = require('../models/user')
 // const mongoose=require('../models/user')
-
-
 exports.home = (req, res) => {
     res.render('signin',{msg:''})
 }
@@ -21,9 +19,9 @@ exports.logout = (req, res) => {
         res.redirect('/')
      })
 }
-exports.forgotpassword = (req, res) => {
-    res.render('forgotpassword')
-}
+// exports.forgotpassword = (req, res) => {
+//     res.render('forgotpassword')
+// }
 
 
 exports.savedata = async (req, res) => {
