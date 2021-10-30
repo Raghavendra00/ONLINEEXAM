@@ -1,0 +1,48 @@
+<%- include('./layouts/head')%>
+<%- include('./layouts/sidebar')%>
+
+<section class="content">
+    <div class="container-fluid">
+
+      <div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+        <div class="body">
+              
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>S No.</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>S No.</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <% for(var i =0;i<students.length;i++) { %>
+                                        <tr>
+                                            <td><%= i+1%></td>
+                                            <td><%= students[i].name%></td>
+                                            <td><%= students[i].email%></td>
+                                            <td><%= students[i].phone%></td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</section>
+<%- include('./layouts/bottom')%>

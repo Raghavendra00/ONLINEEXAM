@@ -16,13 +16,6 @@ const userSchema = mongoose.Schema({
         required: true,
         trim: true
     },
-    confirm: {
-        type: String,
-        require: true,
-        trim:true
-    },
-
-
     phone: {
         type: Number,
         required: true,

@@ -6,6 +6,7 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 require('dotenv').config();
 const PORT = process.env.PORT;
 const userRoutes = require('./routes/user');
+const adminRoutes = require('./routes/admin');
 var store = new MongoDBStore({
   uri: process.env.MONGO_URL,
   collection: "sessions",
@@ -29,6 +30,9 @@ app.use(session({
 );
 
 app.use('/', userRoutes);
+app.use('/', adminRoutes);
+
+
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         console.log("Database connected");
