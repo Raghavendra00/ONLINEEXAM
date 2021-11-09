@@ -12,6 +12,8 @@ router.get('/logout', userController.logout)
 // router.get('/forgotpassword', userController.forgotpassword)
 router.post('/savedata', userController.savedata)
 router.get('/exam',isAuth, userController.exam)
+router.post('/sendans',isAuth, userController.sendans)
+router.get('/thankyou',isAuth, userController.thankyou)
 
 
 

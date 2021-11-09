@@ -1,0 +1,19 @@
+#timers {
+  height: 110px;
+  width: 200px;
+  text-align: center;
+  margin-left: 450px;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 25px;
+  color:black;
+  font-size: 30px;
+  padding: 10px;
+  display:inline-block;
+  font-weight: 700;
+  background-color: orangered;
+  position:absolute;
+  top:10;
+  right:15;
+  position: absolute;
+}

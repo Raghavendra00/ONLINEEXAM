@@ -1,5 +1,8 @@
 const user = require('../models/user')
 // const mongoose=require('../models/user')
+
+
+
 exports.home = (req, res) => {
     res.render('signin',{msg:''})
 }
@@ -41,6 +44,8 @@ exports.savedata = async (req, res) => {
             email: req.body.email,
             phone: req.body.phone,
             password: req.body.password,
+            isAdmin:false,
+            examTaken:false
         };
 
         const result = await user(data).save();
@@ -68,6 +73,34 @@ exports.postsignin = async (req, res) => {
 }
 
 
-exports.exam = (req, res) => {
-  res.render("exam");
+exports.exam = async (req, res) => {
+
+    // console.log(req.session.user);
+
+    var userid = req.session.user._id
+    var result = await user.findById(userid)
+
+
+    if (!result.examTaken) {
+        
+        return res.render("exam");
+    }
+
+    res.render('alreadytaken')
+};
+
+exports.sendans = async (req, res) => {
+
+    var userid = req.session.user._id
+
+    const result = await user.findByIdAndUpdate(userid,{examTaken:true})
+    // req.session.user.examTaken = 
+    console.log(req.body);
+    res.redirect('/thankyou')
+};
+
+exports.thankyou = (req, res) => {
+
+    // console.log(req.body);
+    res.render('thankyou')
 };
