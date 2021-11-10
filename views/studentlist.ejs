@@ -17,6 +17,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Score</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -25,6 +26,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Score</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -34,6 +36,13 @@
                                             <td><%= students[i].name%></td>
                                             <td><%= students[i].email%></td>
                                             <td><%= students[i].phone%></td>
+
+                                            <% if(students[i].score) {%>
+                                            <td><%= students[i].score%></td>
+                                            <% } else {%>
+
+                                            <td>Not Yet Taken</td>
+                                            <% } %>
                                         </tr>
                                         <% } %>
                                     </tbody>

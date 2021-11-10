@@ -15,7 +15,7 @@
         >
           Raghav
         </div>
-        <div class="email">raghavendrakumar217@gmail.com</div>
+        <div class="email"><%= email%></div>
         <!-- <div class="btn-group user-helper-dropdown">
           <i
             class="material-icons"
@@ -52,18 +52,21 @@
             <span>Home</span>
           </a>
         </li>
+        <% if(!isAdmin) { %>
         <li>
           <a href="/exam">
             <i class="material-icons">question_answer</i>
             <span>Start Exam</span>
           </a>
         </li>
+        <% } else {%>
         <li>
           <a href="/viewstudents">
             <i class="material-icons">list</i>
             <span>View Students</span>
           </a>
         </li>
+        <% } %>
         <!-- <li>
           <a href="javascript:void(0);" class="menu-toggle">
             <i class="material-icons">widgets</i>
