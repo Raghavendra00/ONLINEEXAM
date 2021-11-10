@@ -1,5 +1,4 @@
-<%- include('./layouts/head')%> 
-<%- include('./layouts/sidebar')%>
+<%- include('./layouts/head')%> <%- include('./layouts/sidebar')%>
 
 <section class="content">
   <div class="container-fluid">
@@ -18,14 +17,11 @@
               <!-- <img src="//:0" alt="" id="camera--output"> -->
               <!-- Camera trigger -->
               <!-- <button id="camera--trigger">Take a picture</button> -->
-              
-                          <div id="timers">
-                            Time left <span id="timer"></span>
-                          </div>
-            </main>
-             <br /><br />
 
-           
+              <div id="timers">Time left <span id="timer"></span></div>
+            </main>
+            <br /><br />
+
             <form id="ques" action="/sendans" method="post">
               <p>Q 1: Please select your favorite Web language:</p>
                
@@ -35,12 +31,7 @@
               <input type="radio" id="css" name="Q1" value="b" />  
               <label for="css">CSS</label><br />
                
-              <input
-                type="radio"
-                id="javascript"
-                name="Q1"
-                value="c"
-              />
+              <input type="radio" id="javascript" name="Q1" value="c" />
                 <label for="javascript">JavaScript</label>
 
               <br />
@@ -63,50 +54,20 @@
               <input type="radio" id="option3" name="Q3" value="c" />
               <label for="option3">3</label><br /><br />
               <p>Q 4:DBMS stands for ____.</p>
-              <input
-                type="radio"
-                id="q4option1"
-                name="Q4"
-                value="a"
-              />
+              <input type="radio" id="q4option1" name="Q4" value="a" />
               <label for="q4option1">Database mouse system</label><br />
-              <input
-                type="radio"
-                id="q4option2"
-                name="Q4"
-                value="b"
-              />
+              <input type="radio" id="q4option2" name="Q4" value="b" />
               <label for="q4option2">Database mounted software</label><br />
-              <input
-                type="radio"
-                id="q4option3"
-                name="Q4"
-                value="c"
-              />
+              <input type="radio" id="q4option3" name="Q4" value="c" />
               <label for="q4option3">Database management system</label
               ><br /><br />
 
               <p>Q 5:DTP stands for ____.</p>
-              <input
-                type="radio"
-                id="q5option1"
-                name="Q5"
-                value="a"
-              />
+              <input type="radio" id="q5option1" name="Q5" value="a" />
               <label for="q5option1">Desktop publishing Software </label><br />
-              <input
-                type="radio"
-                id="q5option2"
-                name="Q5"
-                value="b"
-              />
+              <input type="radio" id="q5option2" name="Q5" value="b" />
               <label for="q5option2">Device to publish</label><br />
-              <input
-                type="radio"
-                id="q5option3"
-                name="Q5"
-                value="c"
-              />
+              <input type="radio" id="q5option3" name="Q5" value="c" />
               <label for="q5option3">Database to software</label><br /><br />
 
               <p>Q 6:Which of the following is a data storage device?</p>
@@ -114,55 +75,24 @@
               <label for="q6option1">RAM </label><br />
               <input type="radio" id="q6option2" name="Q6" value="b" />
               <label for="q6option2">ROM</label><br />
-              <input
-                type="radio"
-                id="q6option3"
-                name="Q6"
-                value="c"
-              />
+              <input type="radio" id="q6option3" name="Q6" value="c" />
               <label for="q6option3">Hard Disk</label><br /><br />
               <p>
-                Q 7:____ is used to take pictures and supplies to the
-                computer.
+                Q 7:____ is used to take pictures and supplies to the computer.
               </p>
               <input type="radio" id="q7option1" name="Q7" value="a" />
               <label for="q7option1">Modem </label><br />
-              <input
-                type="radio"
-                id="q7option2"
-                name="Q7"
-                value="b"
-              />
+              <input type="radio" id="q7option2" name="Q7" value="b" />
               <label for="q7option2">Digital camera </label><br />
-              <input
-                type="radio"
-                id="q7option3"
-                name="Q7"
-                value="c"
-              />
+              <input type="radio" id="q7option3" name="Q7" value="c" />
               <label for="q7option3">Microphone</label><br /><br />
 
               <p>Q 8:CU stands for____.</p>
-              <input
-                type="radio"
-                id="q8option1"
-                name="Q8"
-                value="a"
-              />
+              <input type="radio" id="q8option1" name="Q8" value="a" />
               <label for="q8option1">Computer unit </label><br />
-              <input
-                type="radio"
-                id="q8option2"
-                name="Q8"
-                value="b"
-              />
+              <input type="radio" id="q8option2" name="Q8" value="b" />
               <label for="q8option2">Compressed unit </label><br />
-              <input
-                type="radio"
-                id="q8option3"
-                name="Q8"
-                value="c"
-              />
+              <input type="radio" id="q8option3" name="Q8" value="c" />
               <label for="q8option3">Control unit</label><br /><br />
 
               <div style="display: flex; justify-content: center">
@@ -179,14 +109,12 @@
   </div>
 </section>
 <script>
+  setTimeout(submitform, 605000);
 
-    setTimeout(submitform,605000)
-
-
-    function submitform() {
-      console.log("in timeout");
-      var form = document.getElementById('ques')
-      form.submit()
-    }
-  </script>
+  function submitform() {
+    console.log("in timeout");
+    var form = document.getElementById("ques");
+    form.submit();
+  }
+</script>
 <%- include('./layouts/bottom')%>
