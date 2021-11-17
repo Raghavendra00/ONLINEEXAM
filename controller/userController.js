@@ -1,13 +1,12 @@
 const user = require("../models/user");
 // const mongoose=require('../models/user')
-
 const bcrypt = require("bcrypt");
 
 exports.home = (req, res) => {
   res.render("signin", { msg: "" });
 };
 
-exports.dashboard = (req, res) => {
+exports.dashboard = (req, res) => {X
   // console.log(req.session.user);
   res.render("dashboard", {
     isAdmin: req.session.user.isAdmin,
@@ -98,12 +97,14 @@ exports.exam = async (req, res) => {
     return res.render("exam", {
       isAdmin: req.session.user.isAdmin,
       email: req.session.user.email,
+      name: req.session.user.name,
     });
   }
 
   res.render("alreadytaken", {
     isAdmin: req.session.user.isAdmin,
     email: req.session.user.email,
+    name: req.session.user.name,
   });
 };
 
