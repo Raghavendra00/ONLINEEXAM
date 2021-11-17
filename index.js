@@ -34,7 +34,7 @@ app.use("/", userRoutes);
 app.use("/", adminRoutes);
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_LIVE)
   .then(() => {
     console.log("Database connected");
     app.listen(PORT, (req, res) => {
@@ -44,3 +44,4 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+

@@ -8,5 +8,6 @@ exports.viewstudents = async (req, res) => {
     students,
     isAdmin: req.session.user.isAdmin,
     email: req.session.user.email,
+    name: req.session.user.name,
   });
 };

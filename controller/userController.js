@@ -1,12 +1,28 @@
 const user = require("../models/user");
 // const mongoose=require('../models/user')
 const bcrypt = require("bcrypt");
+var nodemailer = require("nodemailer");
+require('dotenv').config()
+
+
+
+var transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASS,
+  },
+});
+
+
 
 exports.home = (req, res) => {
   res.render("signin", { msg: "" });
 };
 
-exports.dashboard = (req, res) => {X
+exports.dashboard = (req, res) => {
   // console.log(req.session.user);
   res.render("dashboard", {
     isAdmin: req.session.user.isAdmin,
@@ -147,3 +163,28 @@ exports.thankyou = (req, res) => {
     email: req.session.user.email,
   });
 };
+
+exports.contactus = (req, res) => {
+  res.render('contact')
+}
+exports.sendmail = (req, res) => {
+  console.log(req.body);
+
+  var mailOptions = {
+    from: process.env.EMAIL,
+    to: process.env.EMAIL,
+    subject: "New Message",
+    html: `You've Got A New Message From ${req.body.email}.<br><br> ${req.body.message}`,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+      return res.send("some error");
+    } else {
+      console.log(info);
+      return res.send('mail sent')
+    }
+  });
+
+}
