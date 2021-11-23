@@ -8,7 +8,7 @@ const PORT = process.env.PORT;
 const userRoutes = require("./routes/user");
 const adminRoutes = require("./routes/admin");
 var store = new MongoDBStore({
-  uri: process.env.MONGO_URL,
+  uri: process.env.MONGO_LIVE,
   collection: "sessions",
 });
 
