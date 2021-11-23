@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 var nodemailer = require("nodemailer");
 require("dotenv").config();
 
+
 var transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
@@ -183,3 +184,17 @@ exports.sendmail = (req, res) => {
     }
   });
 };
+
+
+
+exports.upload = (req, res) => {
+  res.render('fileupload')
+}
+
+exports.fileupload = (req, res) => {
+
+  console.log(req.file);
+
+
+  // res.render('fileupload')
+}
