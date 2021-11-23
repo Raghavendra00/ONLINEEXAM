@@ -2,9 +2,7 @@ const user = require("../models/user");
 // const mongoose=require('../models/user')
 const bcrypt = require("bcrypt");
 var nodemailer = require("nodemailer");
-require('dotenv').config()
-
-
+require("dotenv").config();
 
 var transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -15,8 +13,6 @@ var transporter = nodemailer.createTransport({
     pass: process.env.PASS,
   },
 });
-
-
 
 exports.home = (req, res) => {
   res.render("signin", { msg: "" });
@@ -165,8 +161,8 @@ exports.thankyou = (req, res) => {
 };
 
 exports.contactus = (req, res) => {
-  res.render('contact')
-}
+  res.render("contact");
+};
 exports.sendmail = (req, res) => {
   console.log(req.body);
 
@@ -183,8 +179,7 @@ exports.sendmail = (req, res) => {
       return res.send("some error");
     } else {
       console.log(info);
-      return res.send('mail sent')
+      return res.send("mail sent");
     }
   });
-
-}
+};
