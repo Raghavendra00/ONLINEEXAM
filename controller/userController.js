@@ -158,6 +158,7 @@ exports.thankyou = (req, res) => {
   res.render("thankyou", {
     isAdmin: req.session.user.isAdmin,
     email: req.session.user.email,
+    name: req.session.user.name,
   });
 };
 
